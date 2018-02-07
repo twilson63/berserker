@@ -9,8 +9,8 @@ the result.
 ## Usage
 
 ```
-git clone https://github.com/twilson63/berserker1.git
-mkdir berserker
+git clone https://github.com/twilson63/berserker.git
+cd berserker
 npm install browser-sync --global
 browser-sync start --server --files level*.js
 open localhost:3000
