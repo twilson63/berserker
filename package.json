@@ -1,0 +1,21 @@
+{
+  "name": "berserker",
+  "version": "1.0.0",
+  "description": "Berserker is 5 levels of practice with javascript async coding concepts.",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files level*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/twilson63/berserker.git",
+  "keywords": [],
+  "author": "Tom Wilson <tom@jackhq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twilson63/berserker/issues"
+  },
+  "homepage": "https://github.com/twilson63/berserker#readme",
+  "dependencies": {
+    "browser-sync": "^2.23.6"
+  }
+}

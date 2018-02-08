@@ -9,12 +9,21 @@ import { parallel } from 'async'
  *
  * Challenge 1
  *
- * In this challenge use setTimeout to call print `World` after print `Hello`
+ * In this challenge use setTimeout to call print `World`
+ * after print `Hello`
  * keeping the code print('World') above print('Hello')
+ *
+ * setTimeout takes a function as its first argument,
+ * and milliseconds as its second argument, using
+ * the function, you can get the contents of setTimeout
+ * to run after the code below the setTimeout.
  *
  */
 function challenge1(print) {
-  print('World')
+  function printWorld() {
+    print('World')
+  }
+  printWorld() // wrap this function in a setTimeout
   print('Hello')
 }
 /**
@@ -23,10 +32,14 @@ function challenge1(print) {
  * READ: https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
  *
  * Assign the callback function to the onclick event of the button
+ *
+ * The button element has an onclick property that can be assigned
+ * ** HINT: Do this before the click function is called.
  */
 function challenge2(button, callback) {
-  button.click()
-  return null
+  // TODO: assign onclick
+  setTimeout(() => button.click(), 10)
+  return
 }
 
 /**
@@ -44,7 +57,7 @@ function challenge2(button, callback) {
 function challenge3(xhr, callback) {
   window.xhr = xhr
   // use xhr to call the above url
-  callback(null, 'result text here')
+  callback(null, 'test message')
 }
 
 /**

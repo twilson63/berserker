@@ -9,12 +9,21 @@ import { parallel } from 'async'
  *
  * Challenge 1
  *
- * In this challenge use setTimeout to call print `World` after print `Hello`
+ * In this challenge use setTimeout to call print `World`
+ * after print `Hello`
  * keeping the code print('World') above print('Hello')
+ *
+ * setTimeout takes a function as its first argument,
+ * and milliseconds as its second argument, using
+ * the function, you can get the contents of setTimeout
+ * to run after the code below the setTimeout.
  *
  */
 function challenge1(print) {
-  print('World')
+  setTimeout(() => {
+    print('World')
+  }, 10)
+
   print('Hello')
 }
 /**
@@ -23,10 +32,14 @@ function challenge1(print) {
  * READ: https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
  *
  * Assign the callback function to the onclick event of the button
+ *
+ * The button element has an onclick property that can be assigned
+ * ** HINT: Do this before the click function is called.
  */
 function challenge2(button, callback) {
-  button.click()
-  return null
+  button.onclick = callback
+  setTimeout(() => button.click(), 10)
+  return
 }
 
 /**
@@ -44,7 +57,9 @@ function challenge2(button, callback) {
 function challenge3(xhr, callback) {
   window.xhr = xhr
   // use xhr to call the above url
-  callback(null, 'result text here')
+  xhr.get('http://numbersapi.com/42', (err, res) => {
+    callback(null, res.body)
+  })
 }
 
 /**
@@ -60,7 +75,14 @@ function challenge3(xhr, callback) {
  *
  */
 function challenge4(xhr, parallel, callback) {
-  callback(null, ['1', '2'])
+  parallel(
+    [
+      cb => xhr('http://numbersapi.com/42', (err, res) => cb(err, res.body)),
+      cb => xhr('http://numbersapi.com/63', (err, res) => cb(err, res.body))
+    ],
+    callback
+  )
+  //callback(null, ['1', '2'])
 }
 
 /* ------------------- do not touch ----------------*/

@@ -11,9 +11,8 @@ the result.
 ```
 git clone https://github.com/twilson63/berserker.git
 cd berserker
-npm install browser-sync --global
-browser-sync start --server --files level*.js
-open localhost:3000
+npm install
+npm start
 ```
 
 ## Levels
