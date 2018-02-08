@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/twilson63/berserker#readme",
   "dependencies": {
-    "browser-sync": "^2.23.6"
+    "async": "^2.6.0",
+    "browser-sync": "^2.23.6",
+    "xhr": "^2.4.1"
   }
 }
