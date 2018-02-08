@@ -31,10 +31,13 @@ function challenge1(print) {
  *
  * READ: https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
  *
- * Assign the callback function to the onclick event of the button
- *
- * The button element has an onclick property that can be assigned
- * ** HINT: Do this before the click function is called.
+ * Review the challenge2() function.  Notice its arguments.
+ *   The "button" argument represents the button in the browser.  
+ *     When the button is clicked by the user, an onclick event will fire. 
+ *   The "callback" argument value will be a function. 
+ *     Assign the callback function to the onclick event of the button
+ *     The button has an onclick property that can be assigned
+ *     ** HINT: Do this before the click function is called.
  */
 function challenge2(button, callback) {
   // TODO: assign onclick
@@ -73,6 +76,7 @@ function challenge3(xhr, callback) {
  *
  */
 function challenge4(xhr, parallel, callback) {
+  window.xhr = xhr
   callback(null, ['1', '2'])
 }
 
