@@ -76,6 +76,19 @@ function challenge4(xhr, parallel, callback) {
   callback(null, ['1', '2'])
 }
 
+/**
+ * Challenge 5
+ *
+ * READ https://deckofcardsapi.com/
+ *
+ * Use xhr to draw 3 cards from a new deck of cards
+ * verify the count of the number of cards using a reduce.
+ *
+ */
+function challenge5(xhr, callback) {
+  callback(null, 'pass the reduce result here as a Number')
+}
+
 /* ------------------- do not touch ----------------*/
 const { equals, inc } = R
 export default () => {
@@ -120,6 +133,14 @@ export default () => {
     t.plan(1)
     challenge4(xhr, parallel, (err, results) => {
       t.ok(R.and(R.contains('42', results[0]), R.contains('63', results[1])))
+    })
+  })
+
+  tape('Level 1 - Challenge 5', t => {
+    t.plan(1)
+    challenge5(xhr, (err, count) => {
+      console.log('count', count)
+      t.ok(R.equals(3, count))
     })
   })
 }
