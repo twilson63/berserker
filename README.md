@@ -15,6 +15,9 @@ npm install
 npm start
 ```
 
+> Windows Users install browser-sync globally
+> `npm install browser-sync -g`
+
 ## Levels
 
 * Level 1 - Callbacks
